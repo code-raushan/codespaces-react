@@ -1,7 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    todos:[]
+    todos:[
+        {
+            id: '1',
+            title: 'Learning Redux'
+        }
+    ]
 }
 
 const todoSlice = createSlice({
@@ -9,10 +14,10 @@ const todoSlice = createSlice({
     initialState,
     reducers: {
         todoAdded: (state, action)=>{
-            state.todos.push(action.payload)
+            state.todos.todos.push(action.payload)
         },
         todoRemoved: (state, action)=>{
-            state.todos.filter((todo)=>todo.id !== action.payload)
+            state.todos.todos.filter((todo)=>todo.id !== action.payload)
         }
     }
 })
